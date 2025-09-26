@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Introduction</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!-- Navbar component with responsive behavior --> <!-- fixed-top makes the navbar stick to the top -->
+        <div class="container-fluid"> <!-- container-fluid makes the navbar full width -->
+            <a class="navbar-brand" href="#">Generic High School</a> <!-- navbar-brand styles the brand name -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <!-- navbar-toggler creates a button for collapsing the navbar on small screens -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- collapse and navbar-collapse handle the collapsing behavior -->
+                <ul class="navbar-nav ms-auto"> <!-- ms-auto pushes the nav items to the right -->
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--BONUS CONTENT (just tried to make my page make sense)-->
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center text-primary">Class of 2025 Senior Trip Sign-up</h2>
+        <p class="text-center text-secondary fw-bold">Travel Dates: June 1-5, 2025</p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <img src="https://media.istockphoto.com/id/1328667859/photo/big-group-of-happy-friends-stands-on-city-street-with-raised-arms-together-multiracial-young.jpg?s=612x612&w=0&k=20&c=jpH5WQMEaQvzJSP2RzUxLj7nDq_kAxGuywHNldmVc3E=" class="img-fluid rounded" alt="Trip Image">
+            </div>
+            <div class="col-md-6">
+                <h3>Trip Overview</h3>
+                <p>This trip is a celebration for the graduating class of 2025. It includes various fun activities, sightseeing, and bonding experiences to create lasting memories.</p>
+                <ul>
+                    <li>Location: Mexico</li>
+                    <li>Activities: Snorkeling, Hiking, Cultural Tours</li>
+                    <li>Accommodation: All-inclusive 4-star Hotel</li>
+                    <li>Pricing: $500 per student</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+<!--END BONUS CONTENT-->
+<!--FORM CONTENT-->
+    <div class="container mt-5">
+        <h2 class="text-center text-primary">Sign-up Form</h2>
+        <p class="text-center text-secondary fw-bold">Fill out the form below to sign up for the trip. Login to track your payment, trip itinerary, updates, etc.</p>
+        <form class="border p-4 shadow-sm bg-light"> <!-- border adds border, p-4 adds padding, shadow-sm adds a small shadow, bg-light gives a light background -->
+            <div class="mb-3 row"> 
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label> <!-- form-label styles the label -->
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter your first name"> <!-- form-control styles the input field -->
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter your Last name">
+                </div>
+            </div>
+        <!--BONUS FORM CONTENT-->
+            <div class="mb-3">
+                <label for="grade" class="form-label">Class</label>
+                <select class="form-select" id="grade" required> <!-- form-select styles the select dropdown -->
+                    <option value="" disabled selected>Select your senior class</option>
+                    <option value="9">Class A</option>
+                    <option value="10">Class B</option>
+                    <option value="11">Class C</option>
+                    <option value="12">Class D</option>
+                </select>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-md-6">
+                    <label for="emergencycontact" class="form-label">Emergency Contact</label>
+                    <input type="text" class="form-control" id="emergencycontact" placeholder="Enter contact's full name" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Emergency Contact Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter contact's phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> 
+                    <div class="form-text">Format: 123-456-7890</div> 
+                </div>                 
+        <!--END BONUS CONTENT-->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required> 
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create a password" required> 
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Submit</button> <!-- w-100 makes the button full width -->
+        </form>
+    </div>
+<!--TABLE CONTENT-->
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center text-primary">Student Sign-ups</h2>
+        <div class="text-center text-secondary fw-bold mb-3">Below is a list of students who have signed up for the trip.</div>
+        <div class="table-responsive"> <!-- table-responsive makes the table scrollable on small screens -->
+            <table class="table table-striped table-hover border"> <!-- table styles the table, table-striped alternates row colors, table-hover highlights row when hovered over, border adds border -->
+                <thead class="table-dark"> <!-- table-dark gives dark background to header -->
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Jane</td>
+                        <td>Doe</td>
+                        <td>jdoe@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Smith</td>
+                        <td>jsmith@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Emily</td>
+                        <td>Johnson</td>
+                        <td>ejohnson@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Michael</td>
+                        <td>Brown</td>
+                        <td>mbrown@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Matthew</td>
+                        <td>Davis</td>
+                        <td>mdavid@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Olivia</td>
+                        <td>Miller</td>
+                        <td>omiller@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Sophia</td>
+                        <td>Wilson</td>
+                        <td>swilson@generichs.org</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>James</td>
+                        <td>Moore</td>
+                        <td>jmoore@generichs.org</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
+<!--IMAGE and BUTON Requiments-->
+    <div class="container-fluid mt-5"> 
+    <img src="https://photos.smugmug.com/North-America/Mexico/Quintana-Roo/Tulum/i-NPpfSr6/1/DhMg4mBh3GwkFCxb35M4Q6jjtVHSQbVGmBrhkVjvN/X4/beautiful-tulum-beach-at-caribbean-sea-mexico-142132332-min-X4.jpg" class="img-fluid w-100" alt="Vacation Spots"> <!-- img-fluid makes the image responsive, w-100 makes it full width -->
+    </div>
+    <div class="container mt-5 mb-5 text-center"> 
+    <img src="https://media.istockphoto.com/id/1372763153/photo/tour-group-examining-different-locations-on-map.jpg?s=612x612&w=0&k=20&c=7wF-mBTim2K2yLezmYX7Vhete1j_8EEMQhrQD2j3CCc=" class="img-fluid rounded-circle" alt="Trip Image"> <!-- img-fluid makes the image responsive, w-100 makes it full width -->
+    <h3 class="mt-3">Want to be more involved in planning, photography or social media management?</h3>
+    <button class="btn btn-outline-primary d-block mx-auto">Learn More</button> <!-- d-block makes the button take full width, mx-auto centers it horizontally -->
+    <button class="btn btn-success d-block mx-auto d-none d-md-block mt-2">Sign Up Here</button> <!-- d-none hides the button on small screens, d-md-block shows it on medium and larger screens -->
+    </div>
+</div>
+</body>
+</html>
